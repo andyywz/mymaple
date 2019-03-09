@@ -3,7 +3,6 @@ from django.http import HttpResponse
 
 from .models import Daily
 
-# Create your views here.
 def index(req):
     dailies = Daily.objects.all()
 
@@ -14,6 +13,7 @@ def index(req):
 
     return render(req, 'dailies/index.html', { 'dailies': dailies })
 
+# Temporary route to be deleted in the future
 def show(req, daily_id):
     daily = get_object_or_404(Daily, pk=daily_id)
 
