@@ -1,19 +1,18 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
-from django.core import serializers
 
 from .models import Daily
 
 # Create your views here.
 def index(req):
-    data = Daily.objects.all()
+    dailies = Daily.objects.all()
 
-    for daily in data:
+    # reset the daily if it is past reset
+    for daily in dailies:
         if daily.is_stale():
             daily.reset()
 
-    res = serializers.serialize('json', data)
-    return HttpResponse(res, content_type = 'application/json')
+    return render(req, 'dailies/index.html', { 'dailies': dailies })
 
 def show(req, daily_id):
     daily = get_object_or_404(Daily, pk=daily_id)
@@ -21,4 +20,4 @@ def show(req, daily_id):
     if daily.is_stale():
         daily.reset()
 
-    return HttpResponse("Data: %s %s" %(daily, daily.completed_at))
+    return render(req, 'dailies/show.html', { 'daily': daily })
