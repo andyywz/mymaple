@@ -13,7 +13,7 @@ class Daily(models.Model):
         ordering = ('-completed', 'title')
 
     def __str__(self):
-        completed = ' done' if self.completed else ''
+        completed = ' done' if not self.is_stale else ''
         return self.title + completed
 
     def reset(self):

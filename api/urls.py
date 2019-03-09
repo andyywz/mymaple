@@ -1,10 +1,9 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
-from . import views
+from .api import DailyViewSet
 
-app_name = 'dailies'
+router = routers.DefaultRouter()
+router.register(r'dailies', DailyViewSet, basename = 'daily')
 
-urlpatterns = [
-    path('', views.index, name = 'index'),
-    path('<int:daily_id>/', views.show, name = 'show'),
-]
+urlpatterns = router.urls
