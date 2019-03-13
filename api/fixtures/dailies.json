@@ -1,0 +1,22 @@
+[
+    {
+        "model": "api.daily",
+        "pk": 1,
+        "fields": {
+            "title": "Esfera",
+            "desc": "...",
+            "completed": false,
+            "completed_at": null
+        }
+    },
+    {
+        "model": "api.daily",
+        "pk": 2,
+        "fields": {
+            "title": "Vanishing Journey",
+            "desc": "... ...",
+            "completed": true,
+            "completed_at": "2018-01-14 00:00:00"
+        }
+    }
+]
