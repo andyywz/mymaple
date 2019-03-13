@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
     'rest_framework',
     'corsheaders',
+    'api',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -83,8 +84,8 @@ DATABASES = {
         'NAME': 'mymaple',
         'HOST': '127.0.0.1',
         'POST': '5432',
-        'USER': 'postgres',
-        'PASSWORD': 'Password*8'
+        'USER': 'ayong',
+        'PASSWORD': ''
     }
 }
 
