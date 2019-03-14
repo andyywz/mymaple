@@ -7,7 +7,7 @@ const defaultState = {
 }
 
 // Reducer
-export default (state = defaultState, action = {}) => {
+export const dailiesReducer = (state = defaultState, action = {}) => {
   switch (action.type) {
     case GET_DAILIES:
       return {

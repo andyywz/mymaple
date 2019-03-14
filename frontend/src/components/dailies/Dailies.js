@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import getDailies from './dailies.duck';
+import { getDailies } from './dailies.duck';
 
 export class Dailies extends Component {
   componentDidMount() {
