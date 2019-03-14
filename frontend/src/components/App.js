@@ -1,17 +1,21 @@
-import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
-import Header from "./layouts/Header";
-import Dashboard from "./dailies/Dashboard";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import Header from './layouts/Header';
+import Dashboard from './dailies/Dashboard';
+
+import { Provider } from 'react-redux';
+import store from '../store';
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <Provider store={store}>
         <Header />
         <Dashboard />
-      </Fragment>
+      </Provider>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("my-maple"));
+ReactDOM.render(<App />, document.getElementById('my-maple'));
